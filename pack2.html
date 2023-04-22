@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="form copy.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Package 2</div>
+      <div class="content">
+        <form
+          method="post"
+          id="contactform"
+          autocomplete="off"
+          name="google-sheet"
+        >
+          <input
+            class="hide"
+            type="text"
+            placeholder=""
+            required=""
+            name="Package"
+            value="Package 2"
+          />
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Group Name</span>
+              <input
+                type="text"
+                placeholder="REL-EVENTS"
+                required=""
+                name="Group"
+              />
+            </div>
+          </div>
+
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Contact</span>
+              <input type="text" placeholder="868" required="" name="Number" />
+            </div>
+          </div>
+          <!-- Insert Female Title -->
+          <br />
+          <div class="sub-title">Females</div>
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Enter Name(s):</span>
+              <textarea
+                type=""
+                placeholder="List Names Here"
+                required=""
+                name="Females"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Insert Male Title -->
+          <div class="sub-title">Males</div>
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Enter Name(s):</span>
+              <textarea
+                type=""
+                placeholder="List Names Here"
+                required=""
+                name="Males"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="button">
+            <input type="submit" name="submit" value="Get Listed" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxNoBX6Z9sbnsNMk9rQ6Pwg9gGijQ-Tb05QkjlTNXqQOluj_AHgYC_0EMTO8b4DZhLo/exec";
+      const form = document.forms["google-sheet"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then(function URL() {
+            location.href =
+              "https://instagram.com/rel_events.tt?igshid=ZDdkNTZiNTM=";
+          })
+          .then((response) => alert("You have successfully submitted."))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
